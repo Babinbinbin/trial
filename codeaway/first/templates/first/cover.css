@@ -1,16 +1,6 @@
-.btn-light,
-.btn-light:hover,
-.btn-light:focus {
-  color: #333333;
-  text-shadow: none; 
-}
-
-
-
-
 body {
   text-shadow: 0 .05rem .1rem rgba(24, 169, 56, 0.5) /* green shadows of features and contact */;
-  box-shadow: inset 0 0 5rem rgba(230, 255, 4, 0.5) /* box shadow (now yellow) */;
+  box-shadow: inset 0 0 5rem rgba(37, 109, 134, 0.5) /* box shadow (now yellow) */;
 }
 
 .cover-container {
