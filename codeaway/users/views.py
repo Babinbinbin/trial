@@ -27,6 +27,17 @@ def register(request):
         username=request.POST["username"]
         email=request.POST["email"]
         password=request.POST["password"]
+
+
+        if len(username) >10:
+            messages.error(request,"Username must be under 10 chr")
+            return redirect('home')
+        
+        if not username.isalnum():
+            messages.error(request,"Username should only contain letters and numbers")
+            return redirect('home')
+        
+
         user=User.objects.create_user(username,email,password)
         user.user_name=username
         user.save()
