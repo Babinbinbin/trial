@@ -20,5 +20,6 @@ from users import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('first/',include("first.urls")),
-    path('users/', include("users.urls")),
+
+    path('users/', include("users.urls"))
 ]
