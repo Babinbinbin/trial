@@ -6,6 +6,7 @@ from .form import UserRegistrationForm
 # Create your views here.
 
 def register2(request):
+    """return render(request,"users/register2.html")"""
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -14,5 +15,5 @@ def register2(request):
             return redirect('index')
     else:
         form = UserRegistrationForm()
-    return render(request,'users/register.html',{'form':form})
+    return render(request,'users/register2.html',{'form':form})
 
