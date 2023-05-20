@@ -1,0 +1,19 @@
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #110e1f;
+}
+.col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+
+
+
