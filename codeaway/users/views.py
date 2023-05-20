@@ -4,7 +4,8 @@ from django.contrib import messages
 from .form import UserRegistrationForm
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, logout
+from django.contrib.auth import login as log
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -16,11 +17,17 @@ def registerhomepage(request):
 
 def login(request):
     if request.method=="POST":
-        username=request.POST["username"]
-        email=request.POST["email"]
-        password=request.POST["password"]
-        
-    return render(request, "users/register2.html")
+        username=request.POST.get("username")
+        password=request.POST.get("password")
+        user=authenticate(request, username=username,password=password)
+        if user is not None:
+            log(request,user)
+            return HttpResponseRedirect(reverse("register"))
+        else:
+            return render(request, "users/login.html", {
+                "message": "invalid credentials"
+            })      
+    return render(request, "users/signinindex.html")
 
 def register(request):
     if request.method=="POST":

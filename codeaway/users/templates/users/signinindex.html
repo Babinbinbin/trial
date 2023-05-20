@@ -1,9 +1,10 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
     <title>Signinx</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="signin.css" rel="stylesheet">
+    <link href="{% static 'users/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'users/signin.css'%} " rel="stylesheet">
   </head>
   
   <body class="text-center" text-bg-dark>
@@ -14,15 +15,16 @@
       <p>&nbsp; </p>
       
       <p>&nbsp; </p>
-      <form>
+      <form action="{%url 'login' %}" method="POST">
+        {% csrf_token %}
         <p>&nbsp; </p>
         <p>&nbsp; </p>
         <div>
-          <input type="text" class="form-control" placeholder="Username">
+          <input type="text" class="form-control" name="username" placeholder="Username">
         </div>
         <p></p>
         <div>
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
         <p></p>
