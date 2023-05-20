@@ -18,13 +18,17 @@
       <p>&nbsp; </p>
       
       <p>&nbsp; </p>
-      <form method="POST">
+      {% if message %}
+        <div> {{ message }}</div>
+      {% endif %}
+      <form action="{%url 'register' %}" method="POST">
           {% csrf_token %}
           <h2 style="color:rgb(223, 213, 213);">Sign Up </h2>
+
           <p style="color:rgb(228, 199, 199);">Please fill in this form to create an account.</p>
           
           <div>
-            <input type="text" class="form-control" placeholder="Username">
+            <input type="text" class="form-control" name="username" placeholder="Username">
           </div>
           <p></p>
           <div>
@@ -32,14 +36,12 @@
           </div>
           <p></p>
           <div>
-            <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+            <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
           </div>
           <p></p>
-          <div>
-            <input type="password" class="form-control" placeholder="Repeat Password" name="psw-repeat" required>
-          </div>
+          
           <p style="color:rgb(76, 78, 99);">By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-          <button class="w-100 btn btn-lg btn-primary" type="submit" value="Login">Sign in</button>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
           <p></p>
           <p style="color:bisque">&copy; Varun, Babin, Varun</p>
       </form> 
