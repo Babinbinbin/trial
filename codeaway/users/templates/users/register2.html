@@ -1,12 +1,17 @@
-{% load static %}
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
+  
+
   <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/bootstrap.min.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'users/sign_in.css' %}" type="text/css"/>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="sign-in.css" rel="stylesheet">
     <title>Sign Up</title>
-    <link href="{% static 'users/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'users/sign-in.css %}" rel="stylesheet">
-    <link href="{% static 'first/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'first/pikachcss.css' %}" rel="stylesheet">
+    
+     
   </head>
   
   <body class="text-center" text-bg-dark>
