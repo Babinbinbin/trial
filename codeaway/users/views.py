@@ -24,8 +24,8 @@ def login(request):
             log(request,user)
             return HttpResponseRedirect(reverse("homepage"))
         else:
-            return render(request, "users/login.html", {
-                "message": "invalid credentials"
+            return render(request, "users/signinindex.html", {
+                "message": "Invalid credentials"
             })      
     return render(request, "users/signinindex.html")
 
