@@ -6,3 +6,5 @@ def homepage(request):
     return render(request,"first/homepage.html")
 def index(request):
     return render(request,"first/index.html")
+
+#edittt
