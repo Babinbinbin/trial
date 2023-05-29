@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <title>Quiz</title>
+    <link href="{% static 'first/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'first/test.min.css' %}" rel="stylesheet">
+  </head>
+  <body>    
+  <header data-bs-theme="dark">
+    <h3 style="text-align: center;">CodeAway</h3>
+    <p>&nbsp;</p>
+    <p>&nbsp; </p>
+  </header>
+  <div class="container marketing">
+    <div class="row">
+      
+      <div class="col-lg-4"> 
+       <ul> 
+         <form>
+           <h2> {% for question in questions %} </h2>
+                  <h1>{{question}}</h1>
+                        {% for answer in  answers %}
+                        <div>
+                            {% if iscorrect %}</div>
+                            <h6><input type ="checkbox"> {{answers[answer]}}</h6>
+                            {% endif %}
+                        {% endfor %}
+                {% endfor %}
+            </form>
+       </ul>
+          
+     
+      </div>
+    </div>
+  </div> 
+  </body>
+</html>

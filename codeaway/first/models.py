@@ -13,7 +13,7 @@ class BaseModels(models.Model):
 class Category(BaseModels):
     category_name = models.CharField(max_length =100)
 
-    def _str_(self) -> str:
+    def __str__(self) :
         return self.category_name
 
 class Question(BaseModels):
@@ -21,7 +21,7 @@ class Question(BaseModels):
     question = models.CharField(max_length=100)
     marks = models.IntegerField(default = 5)
 
-    def _str_(self) -> str:
+    def __str__(self):
         return self.question
 
 class Answer(BaseModels):
@@ -29,5 +29,5 @@ class Answer(BaseModels):
     answer = models.CharField(max_length=100)
     is_correct = models.BooleanField(default = False)
 
-    def _str_(self) -> str:
+    def __str__(self) :
         return self.answer
