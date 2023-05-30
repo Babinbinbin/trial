@@ -18,19 +18,42 @@
       <div class="col-lg-4"> 
        <ul> 
          <form>
-           <h2> {% for question in questions %} </h2>
-                  <h1>{{question}}</h1>
-                        {% for answer in  answers %}
+           <h2>{%for question in questions%} </h2>
+           <h1 style="text-align: left;">{{ question }}</h1>
+                        {% for answer in answers %}
                         <div>
                             {% if iscorrect %}</div>
-                            <h6><input type ="checkbox"> {{answers[answer]}}</h6>
+                            <h6 style = 'text-align: left'><input type ="checkbox">{{answer}}</h>
                             {% endif %}
                         {% endfor %}
-                {% endfor %}
+                        {% endfor %}
             </form>
        </ul>
           
-     
+       </ul> 
+        <h2 class="fw-normal">Boolean Statements</h2>
+        <p>Learn your first IF ELSE statement!</p>
+        <p><a class="btn btn-secondary" href="#">View details</a></p>
+      </div>
+      <div class="col-lg-4">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    
+        
+        
+        <h2 class="fw-normal">Strings</h2>
+        <p>It's all about strings in here!</p>
+        <p><a class="btn btn-secondary" href="#">View details</a></p>
+      </div>
+      <div class="col-lg-4">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        
+        <h2 class="fw-normal">Syntax</h2>
+        <p>Learn basic Python syntax</p>
+        <p><a class="btn btn-secondary" href="#">View details</a></p>
       </div>
     </div>
   </div> 
