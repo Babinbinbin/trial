@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Question
 from .models import Answer
-
+from django.http import JsonResponse
 # Create your views here.
 
 def homepage(request):
@@ -29,6 +29,6 @@ def get_quiz(request):
             })
         payload = {"status":True ,'data' :data }
 
-        return HttpResponse(payload, mimetype='application/json')
+        return JsonResponse(payload)
     except :
         pass
