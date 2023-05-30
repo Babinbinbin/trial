@@ -27,6 +27,9 @@
           <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        {% if message %}
+          <div style="color:rgb(223, 213, 213);"> {{ message }}</div>
+        {% endif %}
         <p></p>
         <p style="color:bisque">&copy; Varun, Babin, Varun</p>
       </form>

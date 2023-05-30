@@ -1,47 +1,48 @@
+{% load static %}
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="en" >
   <head>
     <title>Home Page</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="homepage.css" rel="stylesheet">
+    <link href="{% static 'first/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'first/homepage.css' %}" rel="stylesheet">
   </head>
-  <body>    
-  <header data-bs-theme="dark">
-    <h3 style="text-align: center;">CodeAway</h3>
-    <p>&nbsp;</p>
-    <p>&nbsp; </p>
-  </header>
-  <div class="container marketing">
-    <div class="row">
-      
-      <div class="col-lg-4"> 
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+  <body background="{% static 'images/bg2.jpg' %} ">    
+    <header>
+      <h3 style="text-align: center; color: rgba(255, 255, 255, 0.814)">CodeAway</h3>
+      <p>&nbsp;</p>
+      <p>&nbsp; </p>
+    </header>
+    <div >
+      <div class="row">
+        
+        <div class="col-lg-4"> 
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
 
-        <h2 class="fw-normal">Boolean Statements</h2>
-        <p>Learn your first IF ELSE statement!</p>
-        <p><a class="btn btn-secondary" href="#">View details</a></p>
+          <h2 class="fw-normal" style="color: rgb(255, 255, 255)">Basic Python</h2>
+          <p style="color: rgba(255, 255, 255, .5)">Learn basic Python tools to get started with the language!</p>
+          <p><a class="btn btn-secondary" href="#">View details</a></p>
+        </div>
+        <div class="col-lg-4">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          
+          <h2 class="fw-normal" style="color: rgba(255, 255, 255)">Strings</h2>
+          <p style="color: rgba(255, 255, 255, .5)">It's all about strings in here!</p>
+          <p><a class="btn btn-secondary" href="#">View details</a></p>
+        </div>
+        <div class="col-lg-4">
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          
+          <h2 class="fw-normal" style="color: rgba(255, 255, 255)">Syntax</h2>
+          <p style="color: rgba(255, 255, 255, .5)">Learn basic Python syntax</p>
+          <p><a class="btn btn-secondary" href="#">View details</a></p>
+        </div>
       </div>
-      <div class="col-lg-4">
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        
-        <h2 class="fw-normal">Strings</h2>
-        <p>It's all about strings in here!</p>
-        <p><a class="btn btn-secondary" href="#">View details</a></p>
-      </div>
-      <div class="col-lg-4">
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        
-        <h2 class="fw-normal">Syntax</h2>
-        <p>Learn basic Python syntax</p>
-        <p><a class="btn btn-secondary" href="#">View details</a></p>
-      </div>
-    </div>
-  </div> 
+    </div> 
   </body>
 </html>
