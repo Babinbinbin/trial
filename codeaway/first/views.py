@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Question
+from .models import Question,Category
 from .models import Answer
 from django.http import JsonResponse
 # Create your views here.
@@ -25,9 +25,10 @@ def get_quiz(request):
             data.append( {
                 'category' : question.category.category_name,
                 'question' :  question.question,
-                'matks'   : question.marks
+                'marks'   : question.marks,
+                'answers' :question_obj.get_answers()
             })
-        payload = {"status":True ,'data' :data }
+        payload = {"status" : True ,'data' :data }
 
         return JsonResponse(payload)
     except :

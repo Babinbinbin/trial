@@ -17,8 +17,8 @@
       
       <div class="col-lg-4"> 
        <ul> 
-         <form>
-           <h2>{%for question in questions%} </h2>
+         <form>{{category}}
+           <h2>{%for question in data%} </h2>
            <h1 style="text-align: left;">{{ question }}</h1>
                         {% for answer in answers %}
                         <div>
