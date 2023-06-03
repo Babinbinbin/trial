@@ -1,5 +1,7 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
+    <script src = "{% static 'quizes/main.js' %}" defer></script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +9,45 @@
     <title>Django</title>
 </head>
 <body>
-    <h1>Quiz list</h1>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body-confirm">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">no</button>
+          <button type="button" id ="start-button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class = "h1">Quiz list</div>
+    <hr>
+    {% for obj in object_list %}
+        <button 
+            class ="btn btn-link modal-button"
+            data-pk = "{{obj.pk}}"
+            data-quiz ="{{obj.name}}"
+            data-questions = "{{obj.number_of_questions}}"
+            data-difficulty = "{{obj.difficulty}}"
+            data-time = "{{obj.time}}"
+            data-pass ="{{obj.required_score_to_pass}}"
+            data-toggle ="modal"
+            data_target = 'quizStartModal'>{{obj.name}}</button>
+    {%endfor%}
+
+
 </body>
+ 
+  
 </html>

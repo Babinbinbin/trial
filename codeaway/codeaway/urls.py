@@ -26,4 +26,4 @@ urlpatterns = [
     path('', include('quizes.urls',namespace='quizes')),
 ]
 
-urlpatterns += static(settings.STATIC_URL , document_root = settings.STATIC_URL)
+urlpatterns += static(settings.STATIC_URL , document_root = settings.STATIC_ROOT)
