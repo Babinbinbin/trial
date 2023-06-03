@@ -12,3 +12,8 @@ body {
     margin-right: .75rem;
     margin-left: .75rem;
   }
+
+  input[type = radio] ,[type = checkbox]{
+    transform: scale(2);
+    margin-right: 
+  }
