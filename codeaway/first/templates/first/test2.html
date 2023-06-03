@@ -21,17 +21,14 @@
               {% for dat in data %}
                  <h6>{{dat.category}}</h6>
                  <h3>{{dat.question}}</h3>
-                 {% for answer in dat.answers%}
+                 {% for answer in dat.answers %}
                     <input type="radio" name ="ship[{{dat.answers}}]" >{{answer}}
                     <br>
                  {%endfor%}
                  <br>
               {%endfor%}
-            
             </form>
        </ul>
-          
-
       </div>
     </div>
   </div> 

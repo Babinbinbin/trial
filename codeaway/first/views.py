@@ -25,7 +25,24 @@ def get_quiz(request):
                 'category' : question.category.category_name,
                 'question' :  question.question,
                 'marks'   : question.marks,
-                'answers' : question.get_answer()
+                'answers' : question.get_answer(),
+                
             })
-        return render(request,"first/test2.html",{"data":data,"question" : Question.objects.all()})
+        return render(request,"first/test2.html",{"data":data,})
     #commenttotry
+
+def operation(request):
+     question_obj = list(Question.objects.all())
+     data =[]
+    
+     for question in question_obj:
+            data.append( {
+                'category' : question.category.category_name,
+                'question' :  question.question,
+                'marks'   : question.marks,
+                
+                
+            })
+     payload = {"status" :True , "data" : data}
+
+     return JsonResponse(payload)
