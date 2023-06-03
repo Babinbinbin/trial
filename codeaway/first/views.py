@@ -25,10 +25,11 @@ def get_quiz(request):
                 'category' : question.category.category_name,
                 'question' :  question.question,
                 'marks'   : question.marks,
+
                 'answers' : question.get_answer(),
-                
             })
-        return render(request,"first/test2.html",{"data":data,})
+        return render(request,"first/test2.html",{"data":data,"question" : Question.objects.all()})
+
     #commenttotry
 
 def operation(request):
