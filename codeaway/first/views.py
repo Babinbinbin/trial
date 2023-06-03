@@ -17,8 +17,7 @@ def quiz(request):
         "iscorrect": Answer.is_correct
     })
 def get_quiz(request):
-    try:
-        question_obj = list(Question.object.all())
+        question_obj = list(Question.objects.all())
         data =[]
     
         for question in question_obj:
@@ -26,11 +25,7 @@ def get_quiz(request):
                 'category' : question.category.category_name,
                 'question' :  question.question,
                 'marks'   : question.marks,
-                'answers' :question_obj.get_answers()
+                'answers' : question.get_answer()
             })
-        payload = {"status" : True ,'data' :data }
-
-        return JsonResponse(payload)
-    except :
-        pass
+        return render(request,"first/test2.html",{"data":data,"question" : Question.objects.all()})
     #commenttotry

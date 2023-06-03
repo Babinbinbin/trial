@@ -26,22 +26,12 @@ class Question(BaseModels):
         return self.question
     
     def get_answer(self):
-        answer_objs = list(Answer.objects.filter(question = self))
-        random.shuffle(answer_objs)
-        data =[]
-
-        for answer_obj in answer_objs:
-            data.append({
-                'answer' :answer_obj.answer,
-                'is_correct' :answer_obj.is_correct
-            })
-
-        return data
+        return self.question_answer.all()
 
 class Answer(BaseModels):
-    category = models.ForeignKey(Question,related_name="question_answer",on_delete = models.CASCADE)
-    answer = models.CharField(max_length=100)
+    question = models.ForeignKey(Question,related_name="question_answer",on_delete = models.CASCADE)
+    text = models.CharField(max_length=100)
     is_correct = models.BooleanField(default = False)
 
     def __str__(self) :
-        return self.answer
+        return self.text

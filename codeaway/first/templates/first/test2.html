@@ -4,7 +4,7 @@
   <head>
     <title>Quiz</title>
     <link href="{% static 'first/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'first/test.min.css' %}" rel="stylesheet">
+    <link href="{% static 'first/test.css' %}" rel="stylesheet">
   </head>
   <body>    
   <header data-bs-theme="dark">
@@ -17,16 +17,17 @@
       
       <div class="col-lg-4"> 
        <ul> 
-         <form>{{category}}
-           <h2>{%for question in data%} </h2>
-           <h1 style="text-align: left;">{{ question }}</h1>
-                        {% for answer in answers %}
-                        <div>
-                            {% if iscorrect %}</div>
-                            <h6 style = 'text-align: left'><input type ="checkbox">{{answer}}</h>
-                            {% endif %}
-                        {% endfor %}
-                        {% endfor %}
+         <form>
+              {% for dat in data %}
+                 <h6>{{dat.category}}</h6>
+                 <h3>{{dat.question}}</h3>
+                 {% for answer in dat.answers%}
+                    <input type="radio" name ="ship[{{dat.answers}}]" >{{answer}}
+                    <br>
+                 {%endfor%}
+                 <br>
+              {%endfor%}
+            
             </form>
        </ul>
           
