@@ -26,7 +26,7 @@ class Question(BaseModels):
         return self.question
     
     def get_answer(self):
-        return self.question_answer.all()
+        return self.answer_set.all()
 
 class Answer(BaseModels):
     question = models.ForeignKey(Question,related_name="question_answer",on_delete = models.CASCADE)

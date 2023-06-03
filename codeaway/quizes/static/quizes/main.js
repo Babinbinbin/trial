@@ -2,9 +2,9 @@ console.log("HelloWorld")
 
 
 const modalBtns = [...document.getElementsByClassName('modal-button')]
-const modalBody = document.getElementsById('modal-body-confirm')
+const modalBody = document.getElementById('modal-body-confirm')
 const startBtn = document.getElementById('start')
-modalBtns.forEach(modalBtns => modalBtns.Btn.addEventListner('click',() =>{
+modalBtns.forEach(modalBtn => modalBtn.addEventListener('click',() =>{
     const pk = modalBtn.getAttribute('data-pk')
     const name = modalBtn.getAttribute('data-quiz')
     const numQuestions = modalBtn.getAttribute('data-questions')
@@ -16,7 +16,10 @@ modalBtns.forEach(modalBtns => modalBtns.Btn.addEventListner('click',() =>{
     `<div class = "h5 mb-3">Are you sure you want to begin"<b>${name}</b>
     <div class = "test-muted>
        <ul>
-           
+           <li>difficulty : <b>${difficulty}</li>
+           <li>no of questions: <b>${numQuestions}</li>
+           <li>score to pass : <b>${scoreToPass}</li>
+           <li>time : <b>${time}</li>
        </ul>
     `
 

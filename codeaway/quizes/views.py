@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Quiz
+from questions.models import Question
 from django.views.generic import ListView
 from django.http import JsonResponse
 # Create your views here.
@@ -17,7 +18,7 @@ def quiz_data_view(request, pk):
     questions=[]
     for q in quiz.get_questions():
         answers=[]
-        for a in q.get_answers():
+        for a in q.answer_set.all():
             answers.append(a.text)
         questions.append({str(q): answers})
     return JsonResponse({
