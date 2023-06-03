@@ -17,8 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from users import views as user_views
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('first/',include("first.urls")),
-    path('users/', include("users.urls"))
+    path('users/', include("users.urls")),
+    path('', include('quizes.urls',namespace='quizes')),
 ]
+
+urlpatterns += static(settings.STATIC_URL , document_root = settings.STATIC_URL)

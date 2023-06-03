@@ -6,3 +6,6 @@ This self-hosted site would run on any machine, provided the machine has Django 
 
 # Releases:
 Currently CodeAway has only one build
+
+# Bugs:
+Right now we don't have a functional logout option, though we hope to make it work soon
