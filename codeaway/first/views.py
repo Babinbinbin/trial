@@ -8,6 +8,8 @@ def homepage(request):
     return render(request,"first/homepage.html")
 def index(request):
     return render(request,"first/index.html")
+def connectiontoquiz(request):
+    pass
 def quiz(request):
     store = [i for i in Question.objects.all()]
     value = [i for i in Answer.objects.all()]
