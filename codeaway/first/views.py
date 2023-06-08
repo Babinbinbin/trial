@@ -49,8 +49,10 @@ def operation(request):
 
      return JsonResponse(payload)
 
+ 
 def article(request,pk):
     articles = Article.objects.get(pk=pk)
+
     data =[]
     for q in article.get_content():
         data.append(str(q) : f"{[q.heading,q.content]}")
@@ -58,4 +60,5 @@ def article(request,pk):
         
 
          
+ 
 
