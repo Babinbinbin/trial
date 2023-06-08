@@ -2,8 +2,26 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <link rel="stylesheet" href ='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js'>
-  <link href="{% static 'first/test.temp.css' %}" rel="stylesheet">
+  <style>
+
+    
+    .button {
+        background-color: rgb(63, 191, 63);
+        color: white;
+        height: 32px;
+        width: 105px;
+        border-radius: 6px;
+        transition: box-shadow 0.15s;
+        cursor: pointer;
+        font-weight: bold;
+        border: none;
+    }
+    .button:hover {
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.15);
+    }
+    
+</style>
+  
   <script src = "{% static 'quizes/main.js' %}" defer></script>
 <head>
     <meta charset="UTF-8">
@@ -12,13 +30,13 @@
     <title>Django</title>
 </head>
  
-<body>
+<body background="{% static 'images/bg2.jpg' %} ">
    
    
   <h1 style="text-align: left;">Quiz List</h1>
     <hr>
     {% for obj in object_list %}
-        <a href='/{{obj.pk}}/'><button >{{obj.name}}</button></a>
+        <a href='/{{obj.pk}}/' class="button"><button >{{obj.name}}</button></a>
             <p></p>
     {% endfor %}
 
