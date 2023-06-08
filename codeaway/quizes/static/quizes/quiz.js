@@ -1,6 +1,5 @@
 console.log('hello world quiz')
 
-
 $.ajax({
     type: 'GET',
     url: '${url}data',
