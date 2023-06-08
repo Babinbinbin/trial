@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Question,Category
-from .models import Answer
+from .models import (Answer,Article,Content)
 from django.http import JsonResponse
 # Create your views here.
 
@@ -48,3 +48,17 @@ def operation(request):
      payload = {"status" :True , "data" : data}
 
      return JsonResponse(payload)
+
+def article_set(request,pk):
+    article=Article.objects.get(pk=pk)
+    data =[]
+    for content in article.get_content.all():
+        
+    
+            
+        
+
+         
+     
+
+    return render(request,"first/articles.html")
