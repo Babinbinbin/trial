@@ -49,8 +49,9 @@ def operation(request):
 
      return JsonResponse(payload)
 
-def article_set(request,pk):
-    article=Article.objects.get(pk=pk)
+def article(request,pk):
+    pass
+    """article=Article.objects.get(pk=pk)
     data =[]
     for content in article.get_content.all():
         
@@ -61,4 +62,4 @@ def article_set(request,pk):
          
      
 
-    return render(request,"first/articles.html")
+    return render(request,"first/articles.html")"""
