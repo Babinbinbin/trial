@@ -12,7 +12,7 @@ class Question(models.Model):
     def __str__(self):
         return str(self.text)
     
-    def get_answwers(self):
+    def get_answers(self):
         return self.answer_set.all()
 
 class Answer(models.Model):

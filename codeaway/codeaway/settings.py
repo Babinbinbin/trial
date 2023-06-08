@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'users',
     'first',
@@ -52,14 +53,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'quizes.middlewares.AjaxMiddleware'
+     
 ]
-
+ 
 ROOT_URLCONF = 'codeaway.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [BASE_DIR/ "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,6 +134,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
     BASE_DIR/ "static",
-    BASE_DIR/ "quizes"/ "static",
+    BASE_DIR/"quizes"/"static",
 
 ]
