@@ -49,8 +49,14 @@ def operation(request):
 
      return JsonResponse(payload)
 
+<<<<<<< HEAD
 
 def article(request):
 
     articles = Arti
+=======
+def article(request,pk):
+    articles = Article.objects.get(pk=pk)
+    pass
+>>>>>>> 064d21642886c05b94c9ddfab93a0a5cc71ef359
 
