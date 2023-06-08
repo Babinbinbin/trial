@@ -11,7 +11,7 @@ class Article(models.Model):
     
 class Content(models.Model):
     heading= models.CharField(max_length=50)
-    text= models.CharField(max_length=200)
+    text= models.CharField(max_length=1000)
     articles=models.ForeignKey(Article, on_delete= models.CASCADE)
 
     def __str__(self):
