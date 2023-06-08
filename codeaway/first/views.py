@@ -51,5 +51,11 @@ def operation(request):
 
 def article(request,pk):
     articles = Article.objects.get(pk=pk)
-    pass
+    data =[]
+    for q in article.get_content():
+        data.append(str(q) : f"{[q.heading,q.content]}")
+
+        
+
+         
 
