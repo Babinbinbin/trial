@@ -51,13 +51,14 @@ def operation(request):
 
  
 def article(request,pk):
-    articles = Article.objects.get(pk=pk)
+    articles = Article.objects.get(pk=int(pk))
 
     data =[]
-    for q in article.get_content():
-        data.append(str(q) : f"{[q.heading,q.content]}")
-
-        
+    for q in articles.get_content():
+        data.append(q)
+    return render(request,"first/articles.html",{
+         "data" : data
+    })
 
          
  
