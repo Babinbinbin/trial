@@ -49,17 +49,7 @@ def operation(request):
 
      return JsonResponse(payload)
 
-def article(request,pk):
+
+def article(request):
     pass
-    """article=Article.objects.get(pk=pk)
-    data =[]
-    for content in article.get_content.all():
-        
-    
-            
-        
 
-         
-     
-
-    return render(request,"first/articles.html")"""
