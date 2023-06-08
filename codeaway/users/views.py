@@ -10,11 +10,6 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 
-def registerhomepage(request):
-    pass
-    
-    
-
 def login(request):
     if request.method=="POST":
         username=request.POST.get("username")

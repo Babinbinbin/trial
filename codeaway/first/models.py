@@ -2,7 +2,20 @@ from django.db import models
 import uuid
 import random
 # Create your models here.
+class Article(models.Model):
+    article= models.CharField(max_length=100)
+    def __str__(self):
+        return str(self.article)
+    def get_content(self):
+        return self.content_set.all()
+    
+class Content(models.Model):
+    heading= models.CharField(max_length=50)
+    text= models.CharField(max_length=200)
+    articles=models.ForeignKey(Article, on_delete= models.CASCADE)
 
+    def __str__(self):
+        return f"article: {self.articles.article},heading:{self.heading},text:{self.text}"
 class BaseModels(models.Model):
     uid = models.UUIDField(primary_key=True,default = uuid.uuid4)
     created_at = models.DateField(auto_now=True )
