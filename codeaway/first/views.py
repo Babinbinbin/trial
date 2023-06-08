@@ -50,4 +50,4 @@ def operation(request):
      return JsonResponse(payload)
 
 def article(request):
-    pass
+    articles = Arti
