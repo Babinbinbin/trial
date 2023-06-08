@@ -16,6 +16,15 @@ class Content(models.Model):
 
     def __str__(self):
         return f"article: {self.articles.article},heading:{self.heading},text:{self.text}"
+    
+    def get_heading(self):
+        return self.heading
+    
+    def get_text(self):
+        return self.text
+    
+
+
 class BaseModels(models.Model):
     uid = models.UUIDField(primary_key=True,default = uuid.uuid4)
     created_at = models.DateField(auto_now=True )
