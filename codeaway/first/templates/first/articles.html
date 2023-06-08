@@ -4,14 +4,41 @@
   <head>
     <title>Basic Python</title>
 <link href="{% static 'static/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'first/test.temp.css' %}" rel="stylesheet">
   </head>
   <body background="bg2.jpg">
-    <header>
+    <div class="quiz">
+      
+      <hr>
+        
+        <div class="d-flex">
+          {% for dat in data %}
+          <p>{{dat.category}}</p>
+          <div class="question">
+            <p>{{dat.question}}</p>
+            <div class="answers">
+              {% for answer in dat.answers %}
+              <br>
+              {%endfor%}
+            </div>
+            <br>
+            {%endfor%}
+          </div>
+          
+          
+          </div>
+        </div>
+        <!--<button type="submit" class="submit-btn">Submit</button>-->
+      
+      
+      <div class="result" id="result"></div>
+    </div>
+    <!--<header>
       <p>&nbsp;</p>
       <h3 style="text-align: center; color: rgba(255, 255, 255, 0.814)">CodeAway</h3>
       <p>&nbsp;</p>
       <p>&nbsp; </p>
-    </header>
+    </header>-->
     
   </body>
 </html>
