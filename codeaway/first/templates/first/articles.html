@@ -13,13 +13,9 @@
         
         <div class="d-flex">
           {% for dat in data %}
-          <p>{{dat.category}}</p>
+          <p>{{dat.heading}}</p>
           <div class="question">
-            <p>{{dat.question}}</p>
-            <div class="answers">
-              {% for answer in dat.answers %}
-              <br>
-              {%endfor%}
+            <p>{{dat.text}}</p>
             </div>
             <br>
             {%endfor%}
