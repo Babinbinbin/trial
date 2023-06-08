@@ -51,5 +51,6 @@ def operation(request):
 
 
 def article(request):
-    pass
+
+    articles = Arti
 
