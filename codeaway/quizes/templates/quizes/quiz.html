@@ -11,8 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{obj.title}}</title>
+    <link href="{% static '/quizes/test.temp.css' %}" rel="stylesheet">
 </head>
-<link href="{% static 'quizes/t.css' %}" rel="stylesheet">
+<link href="{% static '/quizes/t.css' %}" rel="stylesheet">
 <body>
     <b><h2>{{obj.name}}</h2></b>
     <p>score to pass: {{obj.required_score_to_pass}}</p>

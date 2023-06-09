@@ -5,7 +5,7 @@
   <style>
 
     
-    .button {
+    .log {
         background-color: rgb(63, 191, 63);
         color: white;
         height: 32px;
@@ -16,13 +16,13 @@
         font-weight: bold;
         border: none;
     }
-    .button:hover {
+    .log:hover {
         box-shadow: 5px 5px 5px rgba(0,0,0,0.15);
     }
     
 </style>
   
-  <script src = "{% static 'quizes/main.js' %}" defer></script>
+  <script src = "{% static '/quizes/main.js' %}" defer></script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,10 +33,10 @@
 <body background="{% static 'images/bg2.jpg' %} ">
    
    
-  <h1 style="text-align: left;">Quiz List</h1>
+  <h1 style="text-align: left; color :white">Topic</h1>
     <hr>
     {% for obj in object_list %}
-        <a href='/{{obj.pk}}/' class="button"><button >{{obj.name}}</button></a>
+        <a href='/{{obj.pk}}/' ><button class="log">{{obj.name}}</button></a>
             <p></p>
     {% endfor %}
 

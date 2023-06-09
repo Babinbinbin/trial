@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Quiz
-from questions.models import Question,Answer
+from questions.models import (Question,Answer)
 from results.models import Result
 from django.views.generic import ListView
 from django.http import JsonResponse
@@ -32,7 +32,7 @@ def quiz_view(request,pk):
     return render(request ,"quizes/quiz.html",{'obj' : quiz})
 
 def quiz_data_view(request, pk):
-    quiz=Quiz.objects.get(pk=pk)
+    quiz=Quiz.objects.get(pk=int(pk))
     questions=[]
     for q in quiz.get_questions():
         answers=[]
@@ -44,15 +44,15 @@ def quiz_data_view(request, pk):
         'time': quiz.time,
     })
 
-def save_quiz_view(request,pk): 
-        if request.is_ajax():
+def save_quiz_view(request,pk):  
+    return JsonResponse({"text":request})
+    if request.is_ajax():
             questions =[]
             data = request.POST
             data_ = dict(data.lists())
             data_.pop('csrfmiddlewaretoken')
-            
             for  k in data_.keys():
-                question = Question.objects.get(text =k)
+                question = Question.objects.get(text=k)
                 questions.append(question)
             user =request.user
             quiz =Quiz.objects.get(pk=pk)
@@ -62,10 +62,10 @@ def save_quiz_view(request,pk):
             correct_answer = None
 
             for q in questions:
-                a_selected =request.POST.get(q.text)
+                a_selected = request.POST.get(q.text)
 
                 if a_selected !="":
-                    question_answers =Answer.objects.filter(question =q)
+                    question_answers =Answer.objects.filter(question = q)
                     for a in question_answers:
                         if a_selected == a.text :
                             if a.correct:
