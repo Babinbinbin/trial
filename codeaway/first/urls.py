@@ -7,5 +7,5 @@ urlpatterns=[
     path("quiz",views.quiz,name="quiz"),
     path('get_quiz',views.get_quiz,name ='get_quiz'),
     path("op",views.operation,name="op"),
-    path("<str:pk>",views.article,name="article"),
+    path("<str:pk>/",views.article,name="article"),
 ]

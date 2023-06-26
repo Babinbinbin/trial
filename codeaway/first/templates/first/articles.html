@@ -3,7 +3,7 @@
 <html lang="en" class="h-100" data-bs-theme="auto">
   <head>
     <title>Basic Python</title>
-<link href="{% static 'static/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'first/bootstrap.min.css' %}" rel="stylesheet">
 <link href="{% static 'first/test.temp.css' %}" rel="stylesheet">
   </head>
   <body background="bg2.jpg">
@@ -24,12 +24,13 @@
           
           </div>
         </div>
-        <button type="submit" class="submit-btn" href="{% url '' %}"> Take Quiz</button>
+        
       
       
       <div class="result" id="result"></div>
     </div>
-    <!--<header>
+    <a href= "{% url 'quizes:main-view'%}"><button type="submit" class="submit-btn" > Take Quiz</button></a>
+     <!--
       <p>&nbsp;</p>
       <h3 style="text-align: center; color: rgba(255, 255, 255, 0.814)">CodeAway</h3>
       <p>&nbsp;</p>

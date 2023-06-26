@@ -17,7 +17,7 @@ def login(request):
         user=authenticate(request, username=username,password=password)
         if user is not None:
             log(request,user)
-            return HttpResponseRedirect(reverse("homepage"))
+            return HttpResponseRedirect(reverse("first:homepage"))
         else:
             return render(request, "users/signinindex.html", {
                 "message": "Invalid credentials"
@@ -44,7 +44,7 @@ def register(request):
         user.user_name=username
         user.save()
         messages.success(request, "Account created successfully")
-        return HttpResponseRedirect(reverse("homepage"))
+        return HttpResponseRedirect(reverse("first:homepage"))
 
     return render(request,"users/register2.html")
          

@@ -45,7 +45,6 @@ def quiz_data_view(request, pk):
     })
 
 def save_quiz_view(request,pk):  
-    return JsonResponse({"text":request})
     if request.is_ajax():
             questions =[]
             data = request.POST
